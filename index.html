@@ -14,9 +14,7 @@
     --accent:#4f7cff;
     --accent-2:#7c5cff;
     --accent-soft:#eaf0ff;
-    --sidebar-bg:#1b2436;
     --text:#26303f;
-    --muted:#6b7a90;
     --line:#e8eef7;
     --card:#fbfcfe;
   }
@@ -52,24 +50,13 @@
     font-weight:700;
     color:#fff;
     background:linear-gradient(135deg,var(--accent),var(--accent-2));
-    box-shadow:0 14px 30px -10px rgba(79,124,255,.85),
-               0 4px 12px -4px rgba(0,0,0,.2);
+    box-shadow:0 14px 30px -10px rgba(79,124,255,.85);
     cursor:pointer;
     transition:transform .2s ease, box-shadow .2s ease;
   }
-  .download-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 20px 38px -12px rgba(79,124,255,.95),
-               0 6px 16px -4px rgba(0,0,0,.25);
-  }
-  .download-btn:active{
-    transform:translateY(-1px) scale(.98);
-  }
-  .download-btn svg{
-    width:17px;
-    height:17px;
-    flex:none;
-  }
+  .download-btn:hover{transform:translateY(-3px)}
+  .download-btn:active{transform:translateY(-1px) scale(.98)}
+  .download-btn svg{width:17px;height:17px;flex:none}
 
   /* ====== قالب اصلی ====== */
   .resume{
@@ -116,10 +103,8 @@
     box-shadow:0 12px 26px -8px rgba(79,124,255,.85);
   }
   .avatar img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
+    width:100%;height:100%;
+    object-fit:cover;object-position:center;
     display:block;
   }
   .name{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px}
@@ -155,30 +140,21 @@
   .bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
 
   .traits li{
-    position:relative;
-    padding-right:20px;
+    position:relative;padding-right:20px;
     font-size:12.5px;color:#b9c6da;
-    margin-bottom:9px;
-    line-height:1.9;
+    margin-bottom:9px;line-height:1.9;
   }
   .traits li:last-child{margin-bottom:0}
   .traits li::before{
-    content:"✓";
-    position:absolute;right:0;top:0;
-    color:var(--accent);
-    font-size:12px;font-weight:700;
+    content:"✓";position:absolute;right:0;top:0;
+    color:var(--accent);font-size:12px;font-weight:700;
   }
 
   /* ====== بخش اصلی ====== */
-  .main{
-    flex:1;
-    min-width:0;
-    padding:40px 40px 46px;
-  }
+  .main{flex:1;min-width:0;padding:40px 40px 46px}
 
   .section + .section{
-    margin-top:30px;
-    padding-top:30px;
+    margin-top:30px;padding-top:30px;
     border-top:1px solid #eff3f9;
   }
 
@@ -195,13 +171,9 @@
 
   .summary{
     background:linear-gradient(135deg,#f6f9ff,#fbfcfe);
-    border:1px solid #e6edfa;
-    border-radius:16px;
-    padding:18px 20px;
-    font-size:13px;
-    line-height:2.15;
-    color:#3d4a5c;
-    text-align:justify;
+    border:1px solid #e6edfa;border-radius:16px;
+    padding:18px 20px;font-size:13px;line-height:2.15;
+    color:#3d4a5c;text-align:justify;
   }
   .summary p + p{margin-top:11px}
 
@@ -212,124 +184,64 @@
     border-radius:16px;
     padding:20px 22px;
     margin-bottom:16px;
-    position:relative;
   }
   .exp:last-child{margin-bottom:0}
 
   .exp-head{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-bottom:10px;
+    display:flex;align-items:flex-start;justify-content:space-between;
+    gap:12px;flex-wrap:wrap;margin-bottom:10px;
   }
-
   .exp-company{
-    font-size:15px;
-    font-weight:800;
-    color:#182234;
-    display:flex;
-    align-items:center;
-    gap:9px;
-    flex-wrap:wrap;
+    font-size:15px;font-weight:800;color:#182234;
+    display:flex;align-items:center;gap:9px;flex-wrap:wrap;
   }
-
   .exp-date{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    font-size:11.5px;
-    font-weight:600;
-    color:#556d99;
-    background:#eef3fb;
-    border:1px solid #dde7f7;
-    padding:3px 11px;
-    border-radius:99px;
-    white-space:nowrap;
-  }
-  .exp-date::before{
-    content:"📅";
-    font-size:11px;
-  }
-
-  .exp-meta{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    flex-wrap:wrap;
-    margin-bottom:4px;
-  }
-
-  .exp-role{
-    display:inline-block;
+    display:inline-flex;align-items:center;gap:6px;
     font-size:11.5px;font-weight:600;
-    color:var(--accent);
-    background:var(--accent-soft);
-    border:1px solid #dbe5ff;
-    padding:3px 12px;
-    border-radius:99px;
+    color:#556d99;background:#eef3fb;
+    border:1px solid #dde7f7;
+    padding:3px 11px;border-radius:99px;white-space:nowrap;
   }
+  .exp-date::before{content:"📅";font-size:11px}
 
+  .exp-meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+  .exp-role{
+    display:inline-block;font-size:11.5px;font-weight:600;
+    color:var(--accent);background:var(--accent-soft);
+    border:1px solid #dbe5ff;padding:3px 12px;border-radius:99px;
+  }
   .exp-link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    font-size:11.5px;
-    font-weight:600;
-    color:#2f7d5a;
-    background:#eafaf1;
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:11.5px;font-weight:600;
+    color:#2f7d5a;background:#eafaf1;
     border:1px solid #cdeedd;
-    padding:3px 11px;
-    border-radius:99px;
+    padding:3px 11px;border-radius:99px;
     text-decoration:none;
-    transition:all .2s ease;
   }
-  .exp-link::before{
-    content:"🔗";
-    font-size:10px;
-  }
-  .exp-link:hover{
-    background:#d7f2e3;
-    color:#1e6144;
-    transform:translateY(-1px);
-  }
+  .exp-link::before{content:"🔗";font-size:10px}
   .exp-link .ltr{font-size:11px;font-weight:700}
 
-  .bullets{
-    list-style:none;
-    margin-top:15px;
-  }
+  .bullets{list-style:none;margin-top:15px}
   .bullets.cols{columns:2;column-gap:28px}
-
   .bullets li{
-    position:relative;
-    padding-right:16px;
-    font-size:12.5px;
-    line-height:1.95;
-    color:#4a5768;
-    margin-bottom:5px;
-    break-inside:avoid;
+    position:relative;padding-right:16px;
+    font-size:12.5px;line-height:1.95;
+    color:#4a5768;margin-bottom:5px;
   }
   .bullets li::before{
-    content:"";
-    position:absolute;right:2px;top:9px;
+    content:"";position:absolute;right:2px;top:9px;
     width:5px;height:5px;border-radius:50%;
     background:#9db4e8;
   }
 
   /* ====== مهارت‌ها ====== */
   .skills-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
+    display:grid;grid-template-columns:repeat(2,1fr);
     gap:14px;
   }
   .skill-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:15px 17px;
-    break-inside:avoid;
+    background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:15px 17px;
   }
   .skill-card h4{
     display:flex;align-items:center;gap:8px;
@@ -345,13 +257,9 @@
   }
   .chips{display:flex;flex-wrap:wrap;gap:6px}
   .chip{
-    font-size:11.5px;
-    line-height:1.9;
-    color:#41506a;
-    background:#eef2f8;
-    border:1px solid #e0e7f1;
-    padding:2px 10px;
-    border-radius:8px;
+    font-size:11.5px;line-height:1.9;color:#41506a;
+    background:#eef2f8;border:1px solid #e0e7f1;
+    padding:2px 10px;border-radius:8px;
   }
 
   /* ====== نمونه‌کارها ====== */
@@ -361,81 +269,32 @@
     gap:14px;
   }
   .pf-card{
-    background:linear-gradient(150deg,#f6f9ff,#fdfeff);
+    background:#f6f9ff;
     border:1px solid #e3ebf9;
     border-radius:16px;
     padding:16px 18px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    transition:all .25s ease;
-    position:relative;
-    overflow:hidden;
-  }
-  .pf-card::before{
-    content:"";
-    position:absolute;
-    top:0; right:0;
-    width:60px; height:60px;
-    background:radial-gradient(circle at 100% 0%, rgba(79,124,255,.14), transparent 70%);
-    pointer-events:none;
-  }
-  .pf-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 16px 32px -18px rgba(79,124,255,.55);
-    border-color:#c9d8ff;
+    display:flex;flex-direction:column;gap:10px;
   }
   .pf-icon{
-    width:38px;height:38px;
-    border-radius:11px;
+    width:38px;height:38px;border-radius:11px;
     display:flex;align-items:center;justify-content:center;
     background:linear-gradient(140deg,var(--accent),var(--accent-2));
-    color:#fff;
-    font-size:17px;
-    box-shadow:0 8px 18px -6px rgba(79,124,255,.6);
+    color:#fff;font-size:17px;
   }
-  .pf-title{
-    font-size:14px;
-    font-weight:800;
-    color:#182234;
-  }
-  .pf-desc{
-    font-size:11.8px;
-    color:#5d6b80;
-    line-height:1.9;
-  }
+  .pf-title{font-size:14px;font-weight:800;color:#182234}
+  .pf-desc{font-size:11.8px;color:#5d6b80;line-height:1.9}
   .pf-meta{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-top:auto;
-    padding-top:8px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:8px;flex-wrap:wrap;
+    margin-top:auto;padding-top:8px;
     border-top:1px dashed #e0e8f5;
   }
-  .pf-date{
-    font-size:11px;
-    font-weight:600;
-    color:#6b7a90;
-  }
+  .pf-date{font-size:11px;font-weight:600;color:#6b7a90}
   .pf-link{
-    display:inline-flex;
-    align-items:center;
-    gap:5px;
-    font-size:11.5px;
-    font-weight:700;
-    color:var(--accent);
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:11.5px;font-weight:700;color:var(--accent);
     text-decoration:none;
-    transition:gap .2s ease;
   }
-  .pf-link::after{
-    content:"←";
-    font-size:12px;
-    transition:transform .2s ease;
-  }
-  .pf-link:hover{ gap:8px }
-  .pf-link:hover::after{ transform:translateX(-3px) }
   .pf-link .ltr{font-size:11px}
 
   /* ====== ریسپانسیو ====== */
@@ -459,22 +318,182 @@
     .portfolio-grid{grid-template-columns:1fr}
   }
 
-  /* ====== چاپ ====== */
+  /* ============================================================
+     ============ تنظیمات چاپ (خروجی PDF تمیز) =================
+     ============================================================ */
   @media print{
-    @page{size:A4;margin:0}
-    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
-    body{background:#fff;padding:0}
-    .resume{
-      max-width:100%;
-      border-radius:0;
-      box-shadow:none;
+    @page{
+      size:A4;
+      margin:0;
     }
-    .sidebar{flex:0 0 300px}
-    .main{padding:30px 32px 34px}
-    .exp,.skill-card,.summary,.pf-card{break-inside:avoid}
-    .exp-link,.pf-link{text-decoration:none}
+
+    *{
+      -webkit-print-color-adjust:exact !important;
+      print-color-adjust:exact !important;
+    }
+
+    html, body{
+      background:#fff !important;
+      background-image:none !important;
+      padding:0 !important;
+      margin:0 !important;
+      font-size:11px;
+      line-height:1.7;
+    }
+
+    /* دکمه در چاپ مخفی */
     .download-btn{display:none !important}
-    .pf-card:hover,.exp-link:hover,.download-btn:hover{transform:none;box-shadow:none}
+
+    /* قالب اصلی: بدون سایه، بدون گردی، بدون overflow */
+    .resume{
+      display:flex !important;
+      flex-direction:row !important;
+      width:210mm !important;
+      max-width:210mm !important;
+      margin:0 !important;
+      border-radius:0 !important;
+      box-shadow:none !important;
+      overflow:visible !important;
+    }
+
+    /* ستون کناری */
+    .sidebar{
+      flex:0 0 68mm !important;
+      width:68mm !important;
+      min-height:297mm;
+      padding:12mm 7mm !important;
+      border-radius:0 !important;
+      overflow:visible !important;
+    }
+    .sidebar::before{display:none !important}
+
+    /* بخش اصلی */
+    .main{
+      flex:1 1 auto !important;
+      min-width:0 !important;
+      padding:12mm 9mm !important;
+      overflow:visible !important;
+    }
+
+    /* ستون‌بندی بولت‌ها حذف بشه تا متن روی هم نیفته */
+    .bullets.cols{
+      columns:1 !important;
+      column-gap:0 !important;
+    }
+
+    /* کنترل شکست صفحه */
+    .summary,
+    .exp,
+    .skill-card,
+    .pf-card,
+    .side-block{
+      page-break-inside:avoid !important;
+      break-inside:avoid !important;
+    }
+
+    .sec-title,
+    .exp-company,
+    .exp-head,
+    .skill-card h4,
+    .pf-title,
+    .side-title{
+      page-break-after:avoid !important;
+      break-after:avoid !important;
+    }
+
+    .bullets li{
+      page-break-inside:avoid !important;
+      break-inside:avoid !important;
+    }
+
+    /* فاصله‌های جمع‌وجورتر */
+    .profile{padding-bottom:14px;margin-bottom:16px}
+    .avatar{width:72px;height:72px;margin-bottom:11px;box-shadow:none !important}
+    .name{font-size:15px}
+    .role{font-size:10px;line-height:1.8}
+
+    .side-block{margin-bottom:16px}
+    .side-title{font-size:11px;margin-bottom:9px}
+    .side-title::before{width:3px;height:12px}
+
+    .contact li{font-size:10px;padding:3px 0}
+    .contact .ico{font-size:11px}
+    .ltr{font-size:10px}
+
+    .edu-deg{font-size:11px}
+    .edu-uni{font-size:10px}
+    .lang-head{font-size:10px}
+    .bar{height:5px}
+
+    .traits li{font-size:10px;margin-bottom:5px;line-height:1.7;padding-right:16px}
+    .traits li::before{font-size:10px}
+
+    .section + .section{margin-top:16px;padding-top:16px}
+    .sec-title{font-size:13.5px;margin-bottom:10px}
+    .sec-title::before{width:4px;height:17px}
+
+    .summary{
+      padding:10px 13px;
+      font-size:10.5px;
+      line-height:1.9;
+      border-radius:10px;
+    }
+    .summary p + p{margin-top:6px}
+
+    .exp{
+      padding:11px 13px;
+      margin-bottom:10px;
+      border-radius:10px;
+    }
+    .exp-company{font-size:12.5px;gap:7px}
+    .exp-date,.exp-role,.exp-link{
+      font-size:9.5px;
+      padding:2px 8px;
+      border-radius:99px;
+    }
+    .exp-date::before,.exp-link::before{font-size:9px}
+    .exp-link .ltr{font-size:9.5px}
+    .exp-meta{margin-bottom:2px;gap:7px}
+
+    .bullets{margin-top:9px}
+    .bullets li{
+      font-size:10px;
+      line-height:1.7;
+      margin-bottom:2px;
+      padding-right:13px;
+    }
+    .bullets li::before{width:4px;height:4px;top:7px;right:1px}
+
+    .skills-grid{
+      grid-template-columns:1fr 1fr !important;
+      gap:8px !important;
+    }
+    .skill-card{padding:9px 11px;border-radius:10px}
+    .skill-card h4{font-size:11px;margin-bottom:7px;gap:6px}
+    .skill-card h4::before{width:6px;height:6px;box-shadow:0 0 0 2px var(--accent-soft)}
+    .chips{gap:4px}
+    .chip{font-size:9.5px;padding:1px 7px;line-height:1.7;border-radius:6px}
+
+    .portfolio-grid{
+      grid-template-columns:1fr 1fr 1fr !important;
+      gap:8px !important;
+    }
+    .pf-card{padding:10px 11px;border-radius:10px;gap:7px}
+    .pf-icon{width:30px;height:30px;font-size:14px;border-radius:9px}
+    .pf-title{font-size:11.5px}
+    .pf-desc{font-size:9.5px;line-height:1.7}
+    .pf-date,.pf-link{font-size:9.5px}
+    .pf-link .ltr{font-size:9.5px}
+    .pf-meta{padding-top:6px}
+
+    /* حذف افکت‌های hover از خروجی */
+    .pf-card:hover,
+    .exp-link:hover,
+    .pf-link:hover,
+    .download-btn:hover{
+      transform:none !important;
+      box-shadow:none !important;
+    }
   }
 </style>
 </head>
@@ -548,7 +567,6 @@
   <!-- ============ بخش اصلی ============ -->
   <main class="main">
 
-    <!-- خلاصه حرفه‌ای -->
     <section class="section">
       <h2 class="sec-title">خلاصه حرفه‌ای</h2>
       <div class="summary">
@@ -568,7 +586,6 @@
       </div>
     </section>
 
-    <!-- ============ نمونه‌کارها ============ -->
     <section class="section">
       <h2 class="sec-title">نمونه‌کارها</h2>
 
@@ -613,11 +630,9 @@
       </div>
     </section>
 
-    <!-- ============ تجربه کاری ============ -->
     <section class="section">
       <h2 class="sec-title">تجربه کاری و پروژه‌ها</h2>
 
-      <!-- VEXA STYLE -->
       <article class="exp">
         <div class="exp-head">
           <h3 class="exp-company">VEXA STYLE | وکسا استایل</h3>
@@ -658,7 +673,6 @@
         </ul>
       </article>
 
-      <!-- SANGSTONE.IR -->
       <article class="exp">
         <div class="exp-head">
           <h3 class="exp-company">سنگ استون | Sang Stone</h3>
@@ -681,7 +695,6 @@
         </ul>
       </article>
 
-      <!-- SANGSTONECO.COM -->
       <article class="exp">
         <div class="exp-head">
           <h3 class="exp-company">Sang Stone Co | سنگ استون</h3>
@@ -705,7 +718,6 @@
       </article>
     </section>
 
-    <!-- ============ مهارت‌های تخصصی ============ -->
     <section class="section">
       <h2 class="sec-title">مهارت‌های تخصصی</h2>
 
