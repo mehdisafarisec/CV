@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محمد مهدی صفری | رزومه حرفه‌ای</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --accent:#4f7cff;
+    --accent-2:#7c5cff;
+    --accent-soft:#eaf0ff;
+    --sidebar-bg:#1b2436;
+    --text:#26303f;
+    --muted:#6b7a90;
+    --line:#e8eef7;
+    --card:#fbfcfe;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    font-family:'Vazirmatn', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+    background:#e8edf5;
+    background-image:radial-gradient(circle at 15% 10%, #dfe8f7 0%, transparent 45%),
+                     radial-gradient(circle at 90% 90%, #e3e9fb 0%, transparent 45%);
+    color:var(--text);
+    line-height:1.9;
+    padding:34px 16px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ====== قالب اصلی ====== */
+  .resume{
+    max-width:1040px;
+    margin:0 auto;
+    display:flex;
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 30px 70px -25px rgba(15,23,42,.35);
+  }
+
+  /* ====== ستون کناری ====== */
+  .sidebar{
+    flex:0 0 322px;
+    background:linear-gradient(165deg,#1e293b 0%,#131c2e 60%,#0f1626 100%);
+    color:#c3cfe0;
+    padding:34px 26px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .sidebar::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 85% 0%, rgba(79,124,255,.28), transparent 55%),
+               radial-gradient(circle at 0% 100%, rgba(124,92,255,.18), transparent 50%);
+    pointer-events:none;
+  }
+  .sidebar > *{position:relative;z-index:1}
+
+  .profile{
+    text-align:center;
+    padding-bottom:24px;
+    margin-bottom:26px;
+    border-bottom:1px solid rgba(255,255,255,.09);
+  }
+  .avatar{
+    width:94px;height:94px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(140deg,var(--accent),var(--accent-2));
+    color:#fff;
+    font-size:25px;font-weight:800;letter-spacing:1px;
+    border:3px solid rgba(255,255,255,.14);
+    box-shadow:0 12px 26px -8px rgba(79,124,255,.85);
+  }
+  .name{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px}
+  .role{font-size:12px;line-height:2;color:#95a8c5}
+
+  .side-block{margin-bottom:26px}
+  .side-block:last-child{margin-bottom:0}
+
+  .side-title{
+    display:flex;align-items:center;gap:9px;
+    font-size:13px;font-weight:700;color:#fff;
+    margin-bottom:14px;
+  }
+  .side-title::before{
+    content:"";
+    width:4px;height:15px;border-radius:3px;
+    background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  }
+
+  .contact li{
+    display:flex;align-items:flex-start;gap:10px;
+    font-size:12.5px;color:#b9c6da;
+    padding:5px 0;
+  }
+  .contact .ico{width:18px;text-align:center;flex:none;font-size:13px;line-height:1.9}
+  .ltr{direction:ltr;unicode-bidi:embed;display:inline-block;font-size:12px}
+
+  .edu-deg{font-size:13px;font-weight:600;color:#fff;margin-bottom:5px}
+  .edu-uni{font-size:12px;color:#94a7c4;line-height:1.9}
+
+  .lang-head{display:flex;justify-content:space-between;font-size:12.5px;color:#b9c6da;margin-bottom:8px}
+  .bar{height:6px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+  .bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+  .traits li{
+    position:relative;
+    padding-right:20px;
+    font-size:12.5px;color:#b9c6da;
+    margin-bottom:9px;
+    line-height:1.9;
+  }
+  .traits li:last-child{margin-bottom:0}
+  .traits li::before{
+    content:"✓";
+    position:absolute;right:0;top:0;
+    color:var(--accent);
+    font-size:12px;font-weight:700;
+  }
+
+  /* ====== بخش اصلی ====== */
+  .main{
+    flex:1;
+    min-width:0;
+    padding:40px 40px 46px;
+  }
+
+  .section + .section{
+    margin-top:30px;
+    padding-top:30px;
+    border-top:1px solid #eff3f9;
+  }
+
+  .sec-title{
+    display:flex;align-items:center;gap:11px;
+    font-size:17px;font-weight:800;color:#182234;
+    margin-bottom:16px;
+  }
+  .sec-title::before{
+    content:"";
+    width:5px;height:22px;border-radius:3px;
+    background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  }
+
+  .summary{
+    background:linear-gradient(135deg,#f6f9ff,#fbfcfe);
+    border:1px solid #e6edfa;
+    border-radius:16px;
+    padding:18px 20px;
+    font-size:13px;
+    line-height:2.15;
+    color:#3d4a5c;
+    text-align:justify;
+  }
+  .summary p + p{margin-top:11px}
+
+  /* کارت تجربه */
+  .exp{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px 22px;
+    margin-bottom:16px;
+  }
+  .exp:last-child{margin-bottom:0}
+
+  .exp-company{
+    font-size:15px;font-weight:800;color:#182234;
+    margin-bottom:9px;
+    display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  }
+  .exp-role{
+    display:inline-block;
+    font-size:11.5px;font-weight:600;
+    color:var(--accent);
+    background:var(--accent-soft);
+    border:1px solid #dbe5ff;
+    padding:3px 12px;
+    border-radius:99px;
+  }
+
+  .bullets{
+    list-style:none;
+    margin-top:15px;
+  }
+  .bullets.cols{columns:2;column-gap:28px}
+
+  .bullets li{
+    position:relative;
+    padding-right:16px;
+    font-size:12.5px;
+    line-height:1.95;
+    color:#4a5768;
+    margin-bottom:5px;
+    break-inside:avoid;
+  }
+  .bullets li::before{
+    content:"";
+    position:absolute;right:2px;top:9px;
+    width:5px;height:5px;border-radius:50%;
+    background:#9db4e8;
+  }
+
+  /* مهارت‌ها */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+  .skill-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:15px 17px;
+    break-inside:avoid;
+  }
+  .skill-card h4{
+    display:flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;color:#1e293b;
+    margin-bottom:11px;
+  }
+  .skill-card h4::before{
+    content:"";
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-soft);
+    flex:none;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{
+    font-size:11.5px;
+    line-height:1.9;
+    color:#41506a;
+    background:#eef2f8;
+    border:1px solid #e0e7f1;
+    padding:2px 10px;
+    border-radius:8px;
+  }
+
+  /* ====== ریسپانسیو ====== */
+  @media (max-width:880px){
+    .resume{flex-direction:column}
+    .sidebar{flex:none;width:100%;padding:30px 24px 34px}
+    .main{padding:30px 24px 36px}
+    .skills-grid{grid-template-columns:1fr}
+    .bullets.cols{columns:1}
+  }
+
+  @media (max-width:480px){
+    body{padding:14px 10px}
+    .resume{border-radius:16px}
+    .main{padding:24px 18px 30px}
+    .sidebar{padding:26px 18px 30px}
+    .exp{padding:16px}
+    .sec-title{font-size:15.5px}
+  }
+
+  /* ====== چاپ ====== */
+  @media print{
+    @page{size:A4;margin:0}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    body{background:#fff;padding:0}
+    .resume{
+      max-width:100%;
+      border-radius:0;
+      box-shadow:none;
+    }
+    .sidebar{flex:0 0 300px}
+    .main{padding:30px 32px 34px}
+    .exp,.skill-card,.summary{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<div class="resume">
+
+  <!-- ============ ستون کناری ============ -->
+  <aside class="sidebar">
+
+    <div class="profile">
+      <div class="avatar">م.م.ص</div>
+      <h1 class="name">محمد مهدی صفری</h1>
+      <p class="role">
+        ادمین سایت | کارشناس WordPress و WooCommerce<br>
+        کارشناس فروشگاه اینترنتی
+      </p>
+    </div>
+
+    <section class="side-block">
+      <h2 class="side-title">اطلاعات تماس</h2>
+      <ul class="contact">
+        <li><span class="ico">📍</span><span>تهران</span></li>
+        <li><span class="ico">📞</span><span>۰۹۱۹۰۶۰۳۶۳۰</span></li>
+        <li><span class="ico">✉️</span><span class="ltr">Mehdisafari.sec@gmail.com</span></li>
+        <li><span class="ico">🎂</span><span>۲۴ ساله</span></li>
+      </ul>
+    </section>
+
+    <section class="side-block">
+      <h2 class="side-title">تحصیلات</h2>
+      <p class="edu-deg">کارشناسی فناوری اطلاعات (IT)</p>
+      <p class="edu-uni">دانشگاه شهید شمسی‌پور – تهران</p>
+    </section>
+
+    <section class="side-block">
+      <h2 class="side-title">زبان</h2>
+      <div class="lang-head"><span>انگلیسی</span><span>متوسط</span></div>
+      <div class="bar"><span style="width:55%"></span></div>
+    </section>
+
+    <section class="side-block">
+      <h2 class="side-title">ویژگی‌های حرفه‌ای</h2>
+      <ul class="traits">
+        <li>تجربه عملی در مدیریت و توسعه فروشگاه اینترنتی</li>
+        <li>توانایی یادگیری سریع ابزارها و سیستم‌های جدید</li>
+        <li>توانایی عیب‌یابی و پیگیری مشکلات سایت</li>
+        <li>دقت بالا در مدیریت اطلاعات محصولات و سفارش‌ها</li>
+        <li>ساده‌سازی فرآیندهای کاری با ابزارهای اختصاصی</li>
+        <li>مسئولیت‌پذیری و پیگیری امور</li>
+        <li>توانایی کار مستقل و حل مسئله</li>
+        <li>علاقه‌مند به تجارت الکترونیک و توسعه فروش آنلاین</li>
+      </ul>
+    </section>
+
+  </aside>
+
+  <!-- ============ بخش اصلی ============ -->
+  <main class="main">
+
+    <!-- خلاصه حرفه‌ای -->
+    <section class="section">
+      <h2 class="sec-title">خلاصه حرفه‌ای</h2>
+      <div class="summary">
+        <p>
+          کارشناس و ادمین سایت با تجربه عملی در راه‌اندازی، مدیریت و توسعه فروشگاه‌های اینترنتی
+          مبتنی بر WordPress و WooCommerce.
+        </p>
+        <p>
+          مسلط به مدیریت محصولات، سفارش‌ها، موجودی، قیمت‌گذاری، محتوای سایت و فرآیند خرید و پرداخت.
+          دارای تجربه کار با دیجی‌کالا، ترب، باسلام، ایمالز و پنل‌های پیامکی و آشنا با مدیریت هاست،
+          cPanel، CDN، تنظیمات امنیتی، بهینه‌سازی عملکرد و SEO پایه.
+        </p>
+        <p>
+          همچنین دارای تجربه در توسعه ابزارها و قابلیت‌های اختصاصی برای ساده‌سازی فرآیندهای فروشگاه،
+          عیب‌یابی مشکلات سایت و بهبود تجربه کاربری.
+        </p>
+      </div>
+    </section>
+
+    <!-- تجربه کاری -->
+    <section class="section">
+      <h2 class="sec-title">تجربه کاری و پروژه‌ها</h2>
+
+      <article class="exp">
+        <h3 class="exp-company">VEXA STYLE | وکسا استایل</h3>
+        <span class="exp-role">طراحی، توسعه و مدیریت فروشگاه اینترنتی</span>
+
+        <ul class="bullets cols">
+          <li>راه‌اندازی و مدیریت فروشگاه اینترنتی با WordPress و WooCommerce</li>
+          <li>مدیریت کامل محصولات، دسته‌بندی‌ها، ویژگی‌ها، قیمت‌ها و موجودی</li>
+          <li>مدیریت سفارش‌ها و پیگیری فرآیند خرید مشتریان</li>
+          <li>مدیریت صفحات فروشگاه و محتوای سایت</li>
+          <li>طراحی و ویرایش صفحات با Elementor</li>
+          <li>پیاده‌سازی و بهینه‌سازی فرآیند ثبت سفارش و پرداخت</li>
+          <li>مدیریت درگاه‌ها و روش‌های پرداخت آنلاین</li>
+          <li>مدیریت تخفیف‌ها، کدهای تخفیف و شرایط فروش</li>
+          <li>هماهنگی موجودی و اطلاعات محصولات در کانال‌های مختلف فروش</li>
+          <li>کار با پنل‌های فروش دیجی‌کالا، ترب، باسلام و ایمالز</li>
+          <li>کار با پنل‌های پیامکی و مدیریت فرآیندهای اطلاع‌رسانی مشتریان</li>
+          <li>توسعه ابزارها و قابلیت‌های اختصاصی برای ساده‌سازی فرآیندهای کاری</li>
+          <li>پیاده‌سازی قابلیت‌های اختصاصی متناسب با نیاز فروشگاه</li>
+          <li>توسعه بخش‌های اختصاصی ارتباط با مشتری و پشتیبانی</li>
+          <li>عیب‌یابی و رفع مشکلات اجرایی و عملکردی سایت</li>
+          <li>بررسی و بهبود سرعت و عملکرد سایت</li>
+          <li>مدیریت هاست و تنظیمات زیرساختی سایت از طریق cPanel</li>
+          <li>راه‌اندازی و مدیریت CDN</li>
+          <li>انجام تنظیمات پایه امنیتی WordPress و سایت</li>
+          <li>اجرای بهینه‌سازی‌های پایه SEO</li>
+          <li>مدیریت و بهینه‌سازی محتوای محصولات</li>
+          <li>عکاسی، آماده‌سازی و بارگذاری تصاویر محصولات</li>
+          <li>بهینه‌سازی تصاویر برای استفاده در فروشگاه اینترنتی</li>
+        </ul>
+      </article>
+
+      <article class="exp">
+        <h3 class="exp-company">سنگ استون</h3>
+        <span class="exp-role">طراحی و توسعه وب‌سایت</span>
+
+        <ul class="bullets">
+          <li>طراحی و پیاده‌سازی وب‌سایت</li>
+          <li>ایجاد و مدیریت ساختار صفحات</li>
+          <li>ویرایش و مدیریت محتوای سایت</li>
+          <li>بهبود ظاهر و تجربه کاربری</li>
+          <li>نگهداری و مدیریت بخش‌های مختلف وب‌سایت</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- مهارت‌های تخصصی -->
+    <section class="section">
+      <h2 class="sec-title">مهارت‌های تخصصی</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h4>WordPress و WooCommerce</h4>
+          <div class="chips">
+            <span class="chip">WordPress</span>
+            <span class="chip">WooCommerce</span>
+            <span class="chip">Elementor</span>
+            <span class="chip">مدیریت محصولات</span>
+            <span class="chip">مدیریت سفارش‌ها</span>
+            <span class="chip">مدیریت موجودی</span>
+            <span class="chip">مدیریت مشتریان</span>
+            <span class="chip">مدیریت محتوا</span>
+            <span class="chip">قیمت و تخفیف</span>
+            <span class="chip">فرآیند خرید و پرداخت</span>
+            <span class="chip">نصب افزونه</span>
+            <span class="chip">شخصی‌سازی سایت</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4>مدیریت فروشگاه اینترنتی</h4>
+          <div class="chips">
+            <span class="chip">مدیریت روزانه فروشگاه</span>
+            <span class="chip">کاتالوگ محصولات</span>
+            <span class="chip">مشخصات محصولات</span>
+            <span class="chip">هماهنگی موجودی کانال‌ها</span>
+            <span class="chip">پیگیری فروش</span>
+            <span class="chip">محتوای فروشگاه</span>
+            <span class="chip">تجربه کاربری و خرید</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4>مارکت‌پلیس و کانال‌های فروش</h4>
+          <div class="chips">
+            <span class="chip">دیجی‌کالا</span>
+            <span class="chip">ترب</span>
+            <span class="chip">باسلام</span>
+            <span class="chip">ایمالز</span>
+            <span class="chip">پنل‌های پیامکی و SMS</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4>توسعه و اتوماسیون</h4>
+          <div class="chips">
+            <span class="chip">توسعه ابزار اختصاصی</span>
+            <span class="chip">خودکارسازی فرآیندها</span>
+            <span class="chip">قابلیت‌های سفارشی</span>
+            <span class="chip">پشتیبانی و ارتباط با مشتری</span>
+            <span class="chip">شخصی‌سازی فرآیند فروش</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4>هاست و زیرساخت</h4>
+          <div class="chips">
+            <span class="chip">cPanel</span>
+            <span class="chip">مدیریت هاست</span>
+            <span class="chip">DNS</span>
+            <span class="chip">CDN</span>
+            <span class="chip">تنظیمات امنیتی</span>
+            <span class="chip">کش و بهینه‌سازی</span>
+            <span class="chip">عیب‌یابی سایت</span>
+            <span class="chip">مفاهیم زیرساخت وب</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4>SEO و محتوا</h4>
+          <div class="chips">
+            <span class="chip">SEO پایه</span>
+            <span class="chip">بهینه‌سازی صفحات محصول</span>
+            <span class="chip">عنوان و توضیحات</span>
+            <span class="chip">مدیریت محتوا</span>
+            <span class="chip">بارگذاری تصاویر</span>
+            <span class="chip">عکاسی محصول</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4>مهارت‌های فنی</h4>
+          <div class="chips">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">PHP (آشنایی)</span>
+            <span class="chip">JavaScript (آشنایی)</span>
+            <span class="chip">ساختار WordPress</span>
+            <span class="chip">عیب‌یابی WooCommerce</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
