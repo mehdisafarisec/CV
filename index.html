@@ -22,7 +22,6 @@
   }
 
   *{margin:0;padding:0;box-sizing:border-box}
-
   html{-webkit-text-size-adjust:100%}
 
   body{
@@ -170,21 +169,62 @@
   }
   .summary p + p{margin-top:11px}
 
-  /* کارت تجربه */
+  /* ====== کارت تجربه ====== */
   .exp{
     background:var(--card);
     border:1px solid var(--line);
     border-radius:16px;
     padding:20px 22px;
     margin-bottom:16px;
+    position:relative;
   }
   .exp:last-child{margin-bottom:0}
 
-  .exp-company{
-    font-size:15px;font-weight:800;color:#182234;
-    margin-bottom:9px;
-    display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  .exp-head{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:10px;
   }
+
+  .exp-company{
+    font-size:15px;
+    font-weight:800;
+    color:#182234;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    flex-wrap:wrap;
+  }
+
+  .exp-date{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:11.5px;
+    font-weight:600;
+    color:#556d99;
+    background:#eef3fb;
+    border:1px solid #dde7f7;
+    padding:3px 11px;
+    border-radius:99px;
+    white-space:nowrap;
+  }
+  .exp-date::before{
+    content:"📅";
+    font-size:11px;
+  }
+
+  .exp-meta{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    flex-wrap:wrap;
+    margin-bottom:4px;
+  }
+
   .exp-role{
     display:inline-block;
     font-size:11.5px;font-weight:600;
@@ -194,6 +234,31 @@
     padding:3px 12px;
     border-radius:99px;
   }
+
+  .exp-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:11.5px;
+    font-weight:600;
+    color:#2f7d5a;
+    background:#eafaf1;
+    border:1px solid #cdeedd;
+    padding:3px 11px;
+    border-radius:99px;
+    text-decoration:none;
+    transition:all .2s ease;
+  }
+  .exp-link::before{
+    content:"🔗";
+    font-size:10px;
+  }
+  .exp-link:hover{
+    background:#d7f2e3;
+    color:#1e6144;
+    transform:translateY(-1px);
+  }
+  .exp-link .ltr{font-size:11px;font-weight:700}
 
   .bullets{
     list-style:none;
@@ -217,7 +282,7 @@
     background:#9db4e8;
   }
 
-  /* مهارت‌ها */
+  /* ====== مهارت‌ها ====== */
   .skills-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -253,6 +318,90 @@
     border-radius:8px;
   }
 
+  /* ====== نمونه‌کارها (کارت‌های خلاصه) ====== */
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:14px;
+  }
+  .pf-card{
+    background:linear-gradient(150deg,#f6f9ff,#fdfeff);
+    border:1px solid #e3ebf9;
+    border-radius:16px;
+    padding:16px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:all .25s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .pf-card::before{
+    content:"";
+    position:absolute;
+    top:0; right:0;
+    width:60px; height:60px;
+    background:radial-gradient(circle at 100% 0%, rgba(79,124,255,.14), transparent 70%);
+    pointer-events:none;
+  }
+  .pf-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 32px -18px rgba(79,124,255,.55);
+    border-color:#c9d8ff;
+  }
+  .pf-icon{
+    width:38px;height:38px;
+    border-radius:11px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(140deg,var(--accent),var(--accent-2));
+    color:#fff;
+    font-size:17px;
+    box-shadow:0 8px 18px -6px rgba(79,124,255,.6);
+  }
+  .pf-title{
+    font-size:14px;
+    font-weight:800;
+    color:#182234;
+  }
+  .pf-desc{
+    font-size:11.8px;
+    color:#5d6b80;
+    line-height:1.9;
+  }
+  .pf-meta{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:auto;
+    padding-top:8px;
+    border-top:1px dashed #e0e8f5;
+  }
+  .pf-date{
+    font-size:11px;
+    font-weight:600;
+    color:#6b7a90;
+  }
+  .pf-link{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:11.5px;
+    font-weight:700;
+    color:var(--accent);
+    text-decoration:none;
+    transition:gap .2s ease;
+  }
+  .pf-link::after{
+    content:"←";
+    font-size:12px;
+    transition:transform .2s ease;
+  }
+  .pf-link:hover{ gap:8px }
+  .pf-link:hover::after{ transform:translateX(-3px) }
+  .pf-link .ltr{font-size:11px}
+
   /* ====== ریسپانسیو ====== */
   @media (max-width:880px){
     .resume{flex-direction:column}
@@ -260,6 +409,7 @@
     .main{padding:30px 24px 36px}
     .skills-grid{grid-template-columns:1fr}
     .bullets.cols{columns:1}
+    .exp-head{flex-direction:column;align-items:flex-start}
   }
 
   @media (max-width:480px){
@@ -269,6 +419,7 @@
     .sidebar{padding:26px 18px 30px}
     .exp{padding:16px}
     .sec-title{font-size:15.5px}
+    .portfolio-grid{grid-template-columns:1fr}
   }
 
   /* ====== چاپ ====== */
@@ -283,7 +434,8 @@
     }
     .sidebar{flex:0 0 300px}
     .main{padding:30px 32px 34px}
-    .exp,.skill-card,.summary{break-inside:avoid}
+    .exp,.skill-card,.summary,.pf-card{break-inside:avoid}
+    .exp-link,.pf-link{text-decoration:none}
   }
 </style>
 </head>
@@ -366,13 +518,68 @@
       </div>
     </section>
 
-    <!-- تجربه کاری -->
+    <!-- ============ نمونه‌کارها ============ -->
+    <section class="section">
+      <h2 class="sec-title">نمونه‌کارها</h2>
+
+      <div class="portfolio-grid">
+
+        <div class="pf-card">
+          <div class="pf-icon">🛒</div>
+          <div class="pf-title">VEXA STYLE</div>
+          <div class="pf-desc">فروشگاه اینترنتی مبتنی بر WordPress و WooCommerce</div>
+          <div class="pf-meta">
+            <span class="pf-date">تیر ۱۴۰۵ – شهریور ۱۴۰۵</span>
+            <a class="pf-link" href="https://vexastyle.ir" target="_blank" rel="noopener">
+              <span class="ltr">vexastyle.ir</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="pf-card">
+          <div class="pf-icon">🏢</div>
+          <div class="pf-title">Sang Stone</div>
+          <div class="pf-desc">وب‌سایت شرکتی و معرفی محصولات سنگ</div>
+          <div class="pf-meta">
+            <span class="pf-date">بهمن ۱۴۰۴ – فروردین ۱۴۰۵</span>
+            <a class="pf-link" href="https://sangstone.ir" target="_blank" rel="noopener">
+              <span class="ltr">sangstone.ir</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="pf-card">
+          <div class="pf-icon">🌐</div>
+          <div class="pf-title">Sang Stone Co</div>
+          <div class="pf-desc">وب‌سایت رسمی شرکت، طراحی و پیاده‌سازی</div>
+          <div class="pf-meta">
+            <span class="pf-date">مهر ۱۴۰۴ – دی ۱۴۰۴</span>
+            <a class="pf-link" href="https://sangstoneco.com" target="_blank" rel="noopener">
+              <span class="ltr">sangstoneco.com</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ تجربه کاری ============ -->
     <section class="section">
       <h2 class="sec-title">تجربه کاری و پروژه‌ها</h2>
 
+      <!-- VEXA STYLE -->
       <article class="exp">
-        <h3 class="exp-company">VEXA STYLE | وکسا استایل</h3>
-        <span class="exp-role">طراحی، توسعه و مدیریت فروشگاه اینترنتی</span>
+        <div class="exp-head">
+          <h3 class="exp-company">VEXA STYLE | وکسا استایل</h3>
+          <span class="exp-date">تیر ۱۴۰۵ – شهریور ۱۴۰۵</span>
+        </div>
+
+        <div class="exp-meta">
+          <span class="exp-role">طراحی، توسعه و مدیریت فروشگاه اینترنتی</span>
+          <a class="exp-link" href="https://vexastyle.ir" target="_blank" rel="noopener">
+            <span class="ltr">vexastyle.ir</span>
+          </a>
+        </div>
 
         <ul class="bullets cols">
           <li>راه‌اندازی و مدیریت فروشگاه اینترنتی با WordPress و WooCommerce</li>
@@ -401,9 +608,19 @@
         </ul>
       </article>
 
+      <!-- SANGSTONE.IR -->
       <article class="exp">
-        <h3 class="exp-company">سنگ استون</h3>
-        <span class="exp-role">طراحی و توسعه وب‌سایت</span>
+        <div class="exp-head">
+          <h3 class="exp-company">سنگ استون | Sang Stone</h3>
+          <span class="exp-date">بهمن ۱۴۰۴ – فروردین ۱۴۰۵</span>
+        </div>
+
+        <div class="exp-meta">
+          <span class="exp-role">طراحی و توسعه وب‌سایت</span>
+          <a class="exp-link" href="https://sangstone.ir" target="_blank" rel="noopener">
+            <span class="ltr">sangstone.ir</span>
+          </a>
+        </div>
 
         <ul class="bullets">
           <li>طراحی و پیاده‌سازی وب‌سایت</li>
@@ -413,9 +630,32 @@
           <li>نگهداری و مدیریت بخش‌های مختلف وب‌سایت</li>
         </ul>
       </article>
+
+      <!-- SANGSTONECO.COM -->
+      <article class="exp">
+        <div class="exp-head">
+          <h3 class="exp-company">Sang Stone Co | سنگ استون</h3>
+          <span class="exp-date">مهر ۱۴۰۴ – دی ۱۴۰۴</span>
+        </div>
+
+        <div class="exp-meta">
+          <span class="exp-role">طراحی و توسعه وب‌سایت</span>
+          <a class="exp-link" href="https://sangstoneco.com" target="_blank" rel="noopener">
+            <span class="ltr">sangstoneco.com</span>
+          </a>
+        </div>
+
+        <ul class="bullets">
+          <li>طراحی و پیاده‌سازی وب‌سایت شرکتی</li>
+          <li>ایجاد ساختار صفحات و بخش‌های معرفی محصولات</li>
+          <li>ویرایش و مدیریت محتوای سایت</li>
+          <li>بهبود ظاهر، چیدمان و تجربه کاربری</li>
+          <li>نگهداری و به‌روزرسانی بخش‌های مختلف وب‌سایت</li>
+        </ul>
+      </article>
     </section>
 
-    <!-- مهارت‌های تخصصی -->
+    <!-- ============ مهارت‌های تخصصی ============ -->
     <section class="section">
       <h2 class="sec-title">مهارت‌های تخصصی</h2>
 
