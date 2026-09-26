@@ -35,6 +35,42 @@
     -webkit-font-smoothing:antialiased;
   }
 
+  /* ====== دکمه دانلود PDF ====== */
+  .download-btn{
+    position:fixed;
+    bottom:26px;
+    left:26px;
+    z-index:999;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:13px 22px;
+    border:none;
+    border-radius:99px;
+    font-family:inherit;
+    font-size:13.5px;
+    font-weight:700;
+    color:#fff;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    box-shadow:0 14px 30px -10px rgba(79,124,255,.85),
+               0 4px 12px -4px rgba(0,0,0,.2);
+    cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .download-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 38px -12px rgba(79,124,255,.95),
+               0 6px 16px -4px rgba(0,0,0,.25);
+  }
+  .download-btn:active{
+    transform:translateY(-1px) scale(.98);
+  }
+  .download-btn svg{
+    width:17px;
+    height:17px;
+    flex:none;
+  }
+
   /* ====== قالب اصلی ====== */
   .resume{
     max-width:1040px;
@@ -318,7 +354,7 @@
     border-radius:8px;
   }
 
-  /* ====== نمونه‌کارها (کارت‌های خلاصه) ====== */
+  /* ====== نمونه‌کارها ====== */
   .portfolio-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -410,6 +446,7 @@
     .skills-grid{grid-template-columns:1fr}
     .bullets.cols{columns:1}
     .exp-head{flex-direction:column;align-items:flex-start}
+    .download-btn{bottom:16px;left:16px;padding:11px 18px;font-size:12.5px}
   }
 
   @media (max-width:480px){
@@ -436,10 +473,23 @@
     .main{padding:30px 32px 34px}
     .exp,.skill-card,.summary,.pf-card{break-inside:avoid}
     .exp-link,.pf-link{text-decoration:none}
+    .download-btn{display:none !important}
+    .pf-card:hover,.exp-link:hover,.download-btn:hover{transform:none;box-shadow:none}
   }
 </style>
 </head>
 <body>
+
+<!-- ============ دکمه دانلود PDF ============ -->
+<button class="download-btn" onclick="window.print()" aria-label="دانلود PDF">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+       stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>
+  دانلود PDF
+</button>
 
 <div class="resume">
 
