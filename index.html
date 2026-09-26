@@ -30,6 +30,7 @@
     font-feature-settings: normal;
     font-variant-ligatures: normal;
     font-variation-settings: normal;
+    font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -350,6 +351,8 @@
       font-weight:400;
       font-feature-settings: normal !important;
       font-variant-ligatures: normal !important;
+      font-kerning: normal !important;
+      font-synthesis: none !important;
       text-rendering:optimizeLegibility !important;
       -webkit-font-smoothing:antialiased;
     }
@@ -840,11 +843,19 @@
       if (btn) btn.removeAttribute('disabled');
     }
 
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(function(){
-        // یک تاخیر کوتاه برای اطمینان از پایان رندر لایه‌بندی
-        setTimeout(doPrint, 60);
-      }).catch(doPrint);
+    if (document.fonts) {
+      // به‌جای اکتفا به fonts.ready (که فقط فونت‌های همون لحظه
+      // استفاده‌شده رو چک می‌کنه)، هر ۴ وزن فونت رو صریحاً و
+      // به‌صورت تضمینی لود می‌کنیم تا هیچ حرفی موقع پرینت با
+      // فونت جایگزین (که کلفت‌تر/متفاوته) رندر نشه.
+      var weights = ['400', '500', '600', '700'];
+      var loaders = weights.map(function(w){
+        return document.fonts.load(w + ' 16px Vazirmatn').catch(function(){});
+      });
+      Promise.all(loaders)
+        .then(function(){ return document.fonts.ready; })
+        .then(function(){ setTimeout(doPrint, 80); })
+        .catch(doPrint);
     } else {
       doPrint();
     }
